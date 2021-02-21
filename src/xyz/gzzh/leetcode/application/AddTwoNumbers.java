@@ -7,10 +7,11 @@ public class AddTwoNumbers {
         ListNode l2 = new ListNode(7, new ListNode(8, new ListNode(9, null)));
 
         ListNode listNode = addTwoNumbers(l1, l2);
-        System.out.println(listNode);
-
+        while (listNode != null) {
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
     }
-
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) {
