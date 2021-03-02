@@ -3,7 +3,7 @@ package xyz.gzzh.leetcode.application;
 //回文数
 public class Palindrome {
     public boolean isPalindrome(int x) {
-        if (x < 0){
+        if (x < 0) {
             return false;
         }
 
