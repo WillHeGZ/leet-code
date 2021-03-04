@@ -3,6 +3,14 @@ package xyz.gzzh.leetcode.learning;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
+/*
+* CAS
+*   compare and swap
+*   对比并交换
+*
+*   ABA问题
+*
+* */
 public class AtomicIntegerDemo {
     private static class User {
         private String name;
