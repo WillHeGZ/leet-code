@@ -12,10 +12,10 @@ public class CollectionDemo {
     static Set<String> hashSet = new HashSet<>();
 
     public static void main(String[] args) {
-        VectorArrayListSafe(vectorArrayList);
+        vectorArrayListSafe(vectorArrayList);
     }
 
-    private static void VectorArrayListSafe(List<String> vectorArrayList) {
+    private static void vectorArrayListSafe(List<String> vectorArrayList) {
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 vectorArrayList.add(UUID.randomUUID().toString());
@@ -24,7 +24,7 @@ public class CollectionDemo {
         }
     }
 
-    private static void CopyOnWriteArrayListSafe() {
+    private static void copyOnWriteArrayListSafe() {
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 copyOnWriteArrayList.add(UUID.randomUUID().toString());
@@ -33,7 +33,7 @@ public class CollectionDemo {
         }
     }
 
-    private static void SynchronizedArrayListSafe() {
+    private static void synchronizedArrayListSafe() {
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 synchronizedArrayList.add(UUID.randomUUID().toString());
