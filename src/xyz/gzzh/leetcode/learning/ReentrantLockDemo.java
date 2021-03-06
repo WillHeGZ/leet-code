@@ -3,6 +3,7 @@ package xyz.gzzh.leetcode.learning;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
+//可重入锁，Synchronized reentrantLock 都属于可重入锁，也是独占锁
 public class ReentrantLockDemo {
     static class SynchronizedObject implements Runnable {
         public synchronized void sendSMS() {
