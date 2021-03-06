@@ -3,6 +3,11 @@ package xyz.gzzh.leetcode.learning;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/*
+ * CountDownLatch，倒计时，指定计数个数，减数完成，完成await后操作
+ * 底层，AQS，自旋，CAS
+ *
+ * */
 public class CountDownLatchDemo {
 
     public static void main(String[] args) throws InterruptedException {

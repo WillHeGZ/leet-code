@@ -4,6 +4,10 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
+/*
+ * CyclicBarrier，循环等待次数，等待次数达到，执行第二个参数中的runnable实现
+ * 底层，AQS，自旋，CAS
+ * */
 public class CyclicBarrierDemo {
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
