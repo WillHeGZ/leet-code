@@ -51,6 +51,5 @@ public class SpinLockDemo {
                 lock.unlock();
             }
         }, "b").start();
-
     }
 }
