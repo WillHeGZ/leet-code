@@ -1,0 +1,41 @@
+package xyz.gzzh.leetcode.learning.juc;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+/*
+ * 1 问题：
+ * java.util.ConcurrentModificationException
+ *
+ * 2.解决
+ * new Vector();
+ * Collections.synchronizedList(new ArrayList<>());
+ * new CopyOnWriteArrayList<>();
+ *
+ * 3.原理
+ *
+ *
+ * */
+public class NotSafeDemo {
+    public static void main(String[] args) {
+        List<String> list = new CopyOnWriteArrayList<>();//Collections.synchronizedList(new ArrayList<>());//new Vector();//new ArrayList();
+
+        Set<String> set = new CopyOnWriteArraySet<>();//new HashSet<>();
+        set.add("a");
+
+        Map<String, String> map = new ConcurrentHashMap<>();//new HashMap<>();
+        map.put("a", "c");
+
+        for (int i = 0; i < 20; i++) {
+            new Thread(() -> {
+                list.add(UUID.randomUUID().toString());
+                System.out.println(list);
+            }, String.valueOf(i)).start();
+        }
+    }
+}
