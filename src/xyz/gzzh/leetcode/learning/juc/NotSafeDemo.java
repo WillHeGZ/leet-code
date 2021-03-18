@@ -25,10 +25,10 @@ public class NotSafeDemo {
     public static void main(String[] args) {
         List<String> list = new CopyOnWriteArrayList<>();//Collections.synchronizedList(new ArrayList<>());//new Vector();//new ArrayList();
 
-        Set<String> set = new CopyOnWriteArraySet<>();//new HashSet<>();
+        Set<String> set = new CopyOnWriteArraySet<>();//Collections.synchronizedSet(new HashSet<>());//new HashSet<>();
         set.add("a");
 
-        Map<String, String> map = new ConcurrentHashMap<>();//new HashMap<>();
+        Map<String, String> map = new ConcurrentHashMap<>();//Collections.synchronizedMap(new HashMap<>());//new HashMap<>();
         map.put("a", "c");
 
         for (int i = 0; i < 20; i++) {
@@ -37,5 +37,10 @@ public class NotSafeDemo {
                 System.out.println(list);
             }, String.valueOf(i)).start();
         }
+
+        int temp = 1 << 4;
+
+        System.out.println(temp);
+
     }
 }

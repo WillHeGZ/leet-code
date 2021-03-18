@@ -1,7 +1,9 @@
 package xyz.gzzh.leetcode.learning;
 
+import java.util.concurrent.TimeUnit;
+
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int i = 1;
         //i++ 返回原值；++i 返回加1后的值
         i = i++; // i = 1
@@ -11,5 +13,7 @@ public class Test {
         System.out.println("i = " + i);
         System.out.println("j = " + j);
         System.out.println("k = " + k);
+
+        TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
     }
 }
