@@ -7,11 +7,21 @@ public class Stock {
 
     public static void main(String[] args) throws InterruptedException {
         BigDecimal number = ONE_HUNDRED.multiply(BigDecimal.valueOf(3));
-        BigDecimal costPrice = BigDecimal.valueOf(5.873);
-        BigDecimal sellPrice = BigDecimal.valueOf(5.82);
+        BigDecimal buyPrice = BigDecimal.valueOf(5.873);
+        BigDecimal sellPrice = BigDecimal.valueOf(6.1);
 
-        BigDecimal result = sellPrice.multiply(number).subtract(costPrice.multiply(number));
+        BigDecimal buyAmount = buyPrice.multiply(number);
+        BigDecimal sellAmount = sellPrice.multiply(number);
+        BigDecimal commissionRatio = BigDecimal.valueOf(2.5).divide(BigDecimal.valueOf(10000));
 
-        System.out.println(result);
+        BigDecimal commissionAmount = buyAmount.multiply(commissionRatio);
+
+        BigDecimal prepareSellPrice = buyAmount.add(buyAmount.multiply(BigDecimal.valueOf(80).divide(ONE_HUNDRED))).divide(number);
+        BigDecimal prepareSellPriceCommissionAmount = prepareSellPrice.multiply(number).subtract(buyAmount);
+
+        System.out.println("income amount : " + sellAmount.subtract(buyAmount));
+        System.out.println("commission amount : " + commissionAmount);
+        System.out.println("prepare sell price : " + prepareSellPrice);
+        System.out.println("prepare sell price commission amount : " + prepareSellPriceCommissionAmount);
     }
 }
