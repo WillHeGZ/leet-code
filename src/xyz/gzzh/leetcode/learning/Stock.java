@@ -6,9 +6,9 @@ public class Stock {
     private final static BigDecimal ONE_HUNDRED = BigDecimal.valueOf(100);
 
     public static void main(String[] args) throws InterruptedException {
-        BigDecimal number = ONE_HUNDRED.multiply(BigDecimal.valueOf(3));
-        BigDecimal buyPrice = BigDecimal.valueOf(5.873);
-        BigDecimal sellPrice = BigDecimal.valueOf(6.1);
+        BigDecimal number = ONE_HUNDRED.multiply(BigDecimal.valueOf(8));
+        BigDecimal buyPrice = BigDecimal.valueOf(5.859);
+        BigDecimal sellPrice = BigDecimal.valueOf(6.0);
 
         BigDecimal buyAmount = buyPrice.multiply(number);
         BigDecimal sellAmount = sellPrice.multiply(number);

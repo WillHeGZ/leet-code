@@ -37,5 +37,6 @@ public class FunctionalInterfaceDemo {
         System.out.println(Calculate.multiply(BigDecimal.valueOf(1), BigDecimal.valueOf(2)));
         System.out.println(Calculate.divide(BigDecimal.valueOf(1), BigDecimal.valueOf(2)));
 
+
     }
 }
