@@ -63,17 +63,17 @@ public class ThreadOrderAccess {
     public static void main(String[] args) {
         ShareResource shareResource = new ShareResource();
         new Thread(() -> {
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 10; i++) {
                 shareResource.print();
             }
         }, "C").start();
         new Thread(() -> {
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 10; i++) {
                 shareResource.print();
             }
         }, "A").start();
         new Thread(() -> {
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 10; i++) {
                 shareResource.print();
             }
         }, "B").start();
