@@ -1,9 +1,6 @@
 package xyz.gzzh.leetcode.learning.juc;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -30,6 +27,8 @@ public class NotSafeDemo {
 
         Map<String, String> map = new ConcurrentHashMap<>();//Collections.synchronizedMap(new HashMap<>());//new HashMap<>();
         map.put("a", "c");
+
+        Map<String,String> map1 = new HashMap<>();
 
         for (int i = 0; i < 20; i++) {
             new Thread(() -> {
