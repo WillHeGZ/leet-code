@@ -21,9 +21,7 @@ public class LengthOfLongestSubstring {
 
 
     public static int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
+        s = s == null ? "" : s;
 
         int maxLength = 0;
         char[] chars = s.toCharArray();
@@ -33,15 +31,13 @@ public class LengthOfLongestSubstring {
             for (int j = i; j < chars.length; j++) {
                 if (!headStr.contains(String.valueOf(chars[j]))) {
                     count++;
+                    headStr = headStr + chars[j];
                 } else {
                     break;
                 }
-                headStr = headStr + chars[j];
             }
 
-            if (count > maxLength) {
-                maxLength = count;
-            }
+            maxLength = count > maxLength ? count : maxLength;
         }
 
         return maxLength;
