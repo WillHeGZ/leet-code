@@ -1,5 +1,6 @@
 package xyz.gzzh.leetcode.application;
 
+import java.util.HashMap;
 import java.util.List;
 
 /*
@@ -20,7 +21,7 @@ public class ThreeSum {
     }
 
     public static List<List<Integer>> threeSum(int[] nums) {
-
+        HashMap<String,String> map = new HashMap<>();
 
         return null;
     }
