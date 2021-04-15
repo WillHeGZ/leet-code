@@ -3,11 +3,11 @@ package xyz.gzzh.leetcode.learning.datastructure;
 public class SparseArray {
     public static void main(String[] args) {
         int[][] chessArray = new int[11][11];
-        chessArray[1][5] = 1;
-        chessArray[2][6] = 2;
+        chessArray[1][2] = 1;
+        chessArray[2][3] = 2;
 
         //输出原棋盘数据
-        System.out.println("原数组");
+        System.out.println("原棋盘数组");
         for (int[] ints : chessArray) {
             for (int data : ints) {
                 System.out.printf("%d\t", data);
@@ -29,6 +29,7 @@ public class SparseArray {
 
         System.out.printf("row count = %d , column count = %d , data count = %d\n", rowCount, columnCount, dataCount);
 
+        System.out.println("\n打印稀疏数组，原棋盘数组 --> 稀疏数组");
         //初始化稀疏数组
         int[][] sparseArray = new int[dataCount + 1][3];
 
@@ -50,8 +51,7 @@ public class SparseArray {
         }
 
         //输出稀疏数组
-        System.out.println("稀疏数组");
-        System.out.println("row\tcol\tval");
+        System.out.println("行\t列\t值");
         for (int[] ints : sparseArray) {
             for (int anInt : ints) {
                 System.out.printf("%d\t", anInt);
@@ -67,7 +67,7 @@ public class SparseArray {
         }
 
         //打印还原稀疏数组
-        System.out.println("打印还原稀疏数组");
+        System.out.println("\n打印还原数组，稀疏数组 --> 原棋盘数字");
         for (int[] ints : restoreArray) {
             for (int anInt : ints) {
                 System.out.printf("%d\t", anInt);
