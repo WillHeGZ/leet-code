@@ -8,7 +8,7 @@ public class Stock {
     public static void main(String[] args) throws InterruptedException {
         BigDecimal number = ONE_HUNDRED.multiply(BigDecimal.valueOf(8));
         BigDecimal buyPrice = BigDecimal.valueOf(5.859);
-        BigDecimal sellPrice = BigDecimal.valueOf(6.0);
+        BigDecimal sellPrice = BigDecimal.valueOf(6.33);
 
         BigDecimal buyAmount = buyPrice.multiply(number);
         BigDecimal sellAmount = sellPrice.multiply(number);

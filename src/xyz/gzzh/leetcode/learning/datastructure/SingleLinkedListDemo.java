@@ -1,5 +1,10 @@
 package xyz.gzzh.leetcode.learning.datastructure;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static xyz.gzzh.leetcode.learning.datastructure.SingleLinkedList.reverseNode;
+
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
         SingleLinkedList<String> singleLinkedList = new SingleLinkedList();
@@ -23,16 +28,37 @@ public class SingleLinkedListDemo {
         SingleLinkedList.Node node2Update = new SingleLinkedList.Node(2, "asdfasdf");
         singleLinkedList.update(node2Update);
 
+        System.out.println("原单链表");
         singleLinkedList.list();
+
+        SingleLinkedList.Node node = reverseNode(singleLinkedList.getHead());
+        System.out.println("反转后");
+        System.out.println(node.toString());
+
+        List<String> list = new ArrayList<>();
+        list.add("");
 
     }
 }
 
 
 class SingleLinkedList<E> {
-    private Node<? extends E> head = new Node(0, null);
+    private Node<E> head = new Node(0, null);
 
-    public void addTail(Node<? extends E> node) {
+    public Node<E> getHead() {
+        return head;
+    }
+
+    public static SingleLinkedList.Node reverseNode(SingleLinkedList.Node head) {
+        if (head == null || head.next == null || head.next.next == null) {
+            return head;
+        }
+
+
+        return null;
+    }
+
+    public void addTail(Node<E> node) {
         Node temp = head;
         while (true) {
             if (temp.next == null) {
