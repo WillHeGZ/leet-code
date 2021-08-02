@@ -93,4 +93,34 @@ public class FileTest {
 
         bufferedInputStream.close();
     }
+
+    @Test
+    public void test4() throws IOException {
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
+
+        try {
+            inputStreamReader = new InputStreamReader(new FileInputStream("先看.txt"), Charset.forName("UTF-8"));
+            outputStreamWriter = new OutputStreamWriter(new FileOutputStream("先看1.txt"), Charset.forName("GBK"));
+
+            char[] buff = new char[10];
+            int length = 0;
+            while ((length = inputStreamReader.read(buff)) != -1) {
+                outputStreamWriter.write(buff, 0, length);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (inputStreamReader != null) {
+                try {
+                    inputStreamReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (outputStreamWriter != null) {
+                outputStreamWriter.close();
+            }
+        }
+    }
 }
